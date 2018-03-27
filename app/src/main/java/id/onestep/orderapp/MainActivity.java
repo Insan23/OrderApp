@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 order = "";
                 if (cbNasi.isChecked()) {
-                    order += "Nasi Goreng\n";
                     if (etJumlahNasi.getText().length() == 0) {
                         etJumlahNasi.setError("harus diisi");
                         status = false;
                     } else {
                         status = true;
                         int jumlahNasi = Integer.parseInt(etJumlahNasi.getText().toString());
+                        order += "Nasi Goreng, " + jumlahNasi + " piring @ Rp 7000 \n";
                         totalHarga += jumlahNasi * 7000;
                     }
                 }
@@ -63,8 +63,9 @@ public class MainActivity extends AppCompatActivity {
                         etJumlahMie.setError("harus diisi");
                         status = false;
                     } else {
-                        order += "Mie Goreng\n";
+                        status = true;
                         int jumlahMie = Integer.parseInt(etJumlahMie.getText().toString());
+                        order += "Mie Goreng, " + jumlahMie + " piring @ Rp 7000\n";
                         totalHarga += jumlahMie * 7000;
                     }
                 }
@@ -75,10 +76,10 @@ public class MainActivity extends AppCompatActivity {
                         status = false;
                     } else {
                         status = true;
-
+                        int jumlahEsteh = Integer.parseInt(etJumlahEsteh.getText().toString());
+                        order += "Es Teh, " + jumlahEsteh + " gelas @ Rp 3000\n";
+                        totalHarga += jumlahEsteh * 3000;
                     }
-                    int jumlahEsteh = Integer.parseInt(etJumlahEsteh.getText().toString());
-                    totalHarga += jumlahEsteh * 3000;
                 }
                 if (cbEsjeruk.isChecked()) {
                     order += "Es Jeruk\n";
@@ -87,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
                         status = false;
                     } else {
                         status = true;
-
+                        int jumlahEsjeruk = Integer.parseInt(etJumlahEsjeruk.getText().toString());
+                        order += "Es Teh, " + jumlahEsjeruk + " gelas @ Rp 4000\n";
+                        totalHarga += jumlahEsjeruk * 4000;
                     }
-                    int jumlahEsjeruk = Integer.parseInt(etJumlahEsjeruk.getText().toString());
-                    totalHarga += jumlahEsjeruk * 4000;
                 }
 
                 order += "\nharga : " + formatRupiah.format((double) totalHarga);
