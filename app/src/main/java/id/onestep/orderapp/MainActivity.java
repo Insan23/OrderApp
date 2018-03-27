@@ -23,11 +23,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        tampilkan(123456789);
+        int jumlahNasiGoreng = 5;
+        tampilkan(jumlahNasiGoreng);
+        tampilkanHarga(jumlahNasiGoreng * 7000);
     }
 
     public void tampilkan(int angka) {
-        TextView quantity = findViewById(R.id.quantity_text);
+        TextView quantity = findViewById(R.id.teks_jumlah);
         quantity.setText(angka);
+    }
+
+    public void tampilkanHarga(int harga) {
+        TextView quantity = findViewById(R.id.teks_harga);
+        quantity.setText("Rp " + harga);
     }
 }
