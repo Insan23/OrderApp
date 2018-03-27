@@ -16,25 +16,56 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    int jumlah;
+    CheckBox cbNasi, cbMie, cbEsteh, cbEsjeruk;
+    TextView txtOrder;
+    EditText etNama, etJumlahNasi, etJumlahMie, etJumlahEsteh, etJumlahEsjeruk;
+    Button submit;
+    //int jumlahNasi,jumlahMie,jumlahEsteh,jumlahEsjeruk;
+    String order;
+    double totalHarga;
+    boolean status;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void submitOrder(View view) {
-        EditText mJumlah = (EditText) findViewById(R.id.teks_jumlah);
-        jumlah = Integer.parseInt(mJumlah.getText().toString());
-        tampilkanHarga(jumlah * 7000);
-    }
+        cbNasi = (CheckBox) findViewById(R.id.ckNasi);
+        txtOrder = (TextView) findViewById(R.id.orderSummary);
+        etNama = (EditText) findViewById(R.id.etNama);
+        etJumlahNasi = (EditText) findViewById(R.id.etJumlahNasi);
 
-    public void tampilkanHarga(int harga) {
-        TextView quantity = findViewById(R.id.teks_harga);
-        EditText mNama = (EditText) findViewById(R.id.nama);
-        String pemesanan = mNama.toString();
-        pemesanan += "\nRp " + harga;
-        quantity.setText(pemesanan);
+        Locale localeID = new Locale("in", "ID");
+        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
+        submit = (Button) findViewById(R.id.btnSubmit);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                order = "";
+                if (cbNasi.isChecked()) {
+                    if (etJumlahNasi.getText().length() == 0) {
+                        etJumlahNasi.setError("harus diisi");
+                        status = false;
+                    } else {
+                        status = true;
+                        int jumlahNasi = Integer.parseInt(etJumlahNasi.getText().toString());
+                        order += "Nasi Goreng, " + jumlahNasi + " piring @ Rp 7000 : " + (jumlahNasi * 7000) + "\n";
+                        totalHarga += jumlahNasi * 7000;
+                    }
+                }
+
+                order += "\nharga : " + formatRupiah.format((double) totalHarga);
+                txtOrder.setText(order);
+                Intent i = new Intent(Intent.ACTION_SENDTO);
+                i.setData(Uri.parse("mailto:"));
+                i.putExtra(Intent.EXTRA_SUBJECT, "order dari " + etNama.getText().toString());
+                i.putExtra(Intent.EXTRA_TEXT, order);
+                if (status) {
+                    startActivity(i);
+                }
+            }
+        });
     }
 }

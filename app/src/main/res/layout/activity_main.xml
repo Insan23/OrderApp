@@ -53,7 +53,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Nasi Goreng"
-                            android:textSize="8pt" />
+                            android:textSize="18sp" />
 
                         <EditText
                             android:id="@+id/etJumlahNasi"
@@ -62,70 +62,7 @@
                             android:layout_alignParentRight="true"
                             android:hint="Jumlah"
                             android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckMie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mie Goreng"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etJumlahMie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckEsteh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Es Teh"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etEsteh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckEsjeruk"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Es jeruk"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etEsjeruk"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
+                            android:textSize="18sp" />
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -136,30 +73,31 @@
                     android:layout_marginLeft="20dp"
                     android:orientation="vertical">
 
-
                 </LinearLayout>
-
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="HARGA" />
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="submitOrder"
-                android:text="ORDER" />
+                android:layout_marginTop="30dp"
+                android:text="Total Pemesanan"
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/teks_harga"
+                android:id="@+id/orderSummary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp" />
+                android:text="Rp 0"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit" />
 
         </LinearLayout>
 
