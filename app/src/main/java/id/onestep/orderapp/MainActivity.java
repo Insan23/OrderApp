@@ -25,29 +25,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        int jumlah = 0;
+        EditText mJumlah = (EditText) findViewById(R.id.teks_jumlah);
+        jumlah = Integer.parseInt(mJumlah.getText().toString());
         tampilkanHarga(jumlah * 7000);
-    }
-
-    public void tampilkan(int angka) {
-        TextView quantity = findViewById(R.id.teks_jumlah);
-        quantity.setText(angka);
     }
 
     public void tampilkanHarga(int harga) {
         TextView quantity = findViewById(R.id.teks_harga);
         quantity.setText("Rp " + harga);
-    }
-
-    public void inkremen(View view) {
-        jumlah = 2;
-        jumlah = jumlah + 1;
-        tampilkan(jumlah);
-    }
-
-    public void dekremen(View view) {
-        jumlah = 5;
-        jumlah = jumlah - 1;
-        tampilkan(jumlah);
     }
 }

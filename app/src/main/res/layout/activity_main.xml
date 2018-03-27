@@ -18,32 +18,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="JUMLAH" />
+        android:text="MENU" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:onClick="dekremen"
-            android:text="-" />
-
         <TextView
-            android:id="@+id/teks_jumlah"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="0"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:text="Nasi Goreng"/>
 
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:onClick="inkremen"
-            android:text="+" />
+        <EditText
+            android:id="@+id/teks_jumlah"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Jumlah"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
