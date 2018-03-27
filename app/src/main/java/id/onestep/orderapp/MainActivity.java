@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                totalHarga = 0;
                 order = "";
                 if (cbNasi.isChecked()) {
                     if (etJumlahNasi.getText().length() == 0) {
