@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context="id.onestep.orderapp.MainActivity">
 
-
     <EditText
         android:id="@+id/nama"
         android:layout_width="match_parent"
