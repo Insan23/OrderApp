@@ -8,166 +8,20 @@
     android:orientation="vertical"
     tools:context="id.onestep.orderapp.MainActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUANTITY" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/quantity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/etNama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:hint="Nama" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="MENU"
-                android:textSize="12pt" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckNasi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Nasi Goreng"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etJumlahNasi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Masukkan Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckMie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mie Goreng"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etJumlahMie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Masukkan Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckEsteh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Es Teh"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etEsteh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Masukkan Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <CheckBox
-                            android:id="@+id/ckEsjeruk"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Es jeruk"
-                            android:textSize="8pt" />
-
-                        <EditText
-                            android:id="@+id/etEsjeruk"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:hint="Masukkan Jumlah"
-                            android:inputType="number"
-                            android:textSize="8pt" />
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="vertical">
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="ORDER SUMMARY"
-                android:textSize="12pt" />
-
-            <TextView
-                android:id="@+id/orderSummary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rp 0"
-                android:textColor="#000000"
-                android:textSize="10pt"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnSubmit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Submit" />
-
-
-            <!--    android:fontFamily="@font/fonts"
-                />-->
-
-        </LinearLayout>
-    </ScrollView>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ORDER"
+        android:onClick="submitOrder"/>
 
 </LinearLayout>
