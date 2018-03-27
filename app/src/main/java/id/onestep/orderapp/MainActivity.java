@@ -36,7 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void tampilkanHarga(int harga) {
         TextView quantity = findViewById(R.id.teks_harga);
-        quantity.setText("Rp " + harga);
+        TextView mNama = findViewById(R.id.nama);
+        String pemesanan = mNama.toString();
+        pemesanan += "\nRp " + harga;
+        quantity.setText(pemesanan);
     }
 
     public void inkremen(View view) {
