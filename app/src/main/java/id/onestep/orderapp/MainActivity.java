@@ -16,6 +16,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    int jumlah;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +25,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        int jumlahNasiGoreng = 5;
-        tampilkan(jumlahNasiGoreng);
-        tampilkanHarga(jumlahNasiGoreng * 7000);
+        int jumlah = 0;
+        tampilkanHarga(jumlah * 7000);
     }
 
     public void tampilkan(int angka) {
@@ -36,5 +37,17 @@ public class MainActivity extends AppCompatActivity {
     public void tampilkanHarga(int harga) {
         TextView quantity = findViewById(R.id.teks_harga);
         quantity.setText("Rp " + harga);
+    }
+
+    public void inkremen(View view) {
+        jumlah = 2;
+        jumlah = jumlah + 1;
+        tampilkan(jumlah);
+    }
+
+    public void dekremen(View view) {
+        jumlah = 5;
+        jumlah = jumlah - 1;
+        tampilkan(jumlah);
     }
 }
